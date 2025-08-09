@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollywood Tactical - Level Up Live</title>
+    <link rel="stylesheet" href="styles/planet-hollywood.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Add scroll padding to account for fixed nav */
+        html {
+            scroll-padding-top: 80px;
+        }
+        
+        /* Ensure sections have proper spacing from fixed nav */
+        .section {
+            scroll-margin-top: 80px;
+        }
+        
+        /* Hero section doesn't need offset */
+        .hero {
+            scroll-margin-top: 0;
+        }
+        
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .hamburger-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(35, 35, 35, 0.95));
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding-top: 80px;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-content {
+            padding: 2rem;
+        }
+        
+        .menu-item {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            color: var(--accent-color);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="timeline-nav">
+        <div class="nav-container">
+                            <div class="timeline-logo" style="cursor: pointer;" onclick="scrollToTop()">
+                    <img src="images/LUL-Logo.png" alt="Level Up Live Logo">
+                </div>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#concept" class="menu-item">Concept</a>
+                <a href="#digital-taran" class="menu-item">Digital Taran</a>
+                <a href="#the-draw" class="menu-item">The Draw</a>
+                <a href="#opportunity" class="menu-item">Opportunity</a>
+                <a href="#founders" class="menu-item">Leadership</a>
+                <a href="#partnerships" class="menu-item">Partnerships</a>
+                <a href="#financials" class="menu-item">Financials</a>
+                                    <a href="#airsoft-advantages" class="menu-item">Airsoft</a>
+                    <a href="https://pitch.com/v/hollywood-tactical-experience-pitch-deck-jn5zv3" target="_blank" class="menu-item pitch-deck-link" style="color: var(--accent-color); font-weight: 600; border-top: 2px solid var(--accent-color); margin-top: 1rem; padding-top: 1.5rem;">View the Deck →</a>
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); margin-top: 1rem; padding-top: 1rem;">
+                        <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Partners</div>
+                        <a href="https://www.leveluplive.com/" target="_blank" class="menu-item pitch-deck-link" style="color: #00d4ff; font-weight: 600; margin-bottom: 0.5rem; display: block;">Level Up Live →</a>
+                        <a href="https://tarantacticalinnovations.com/" target="_blank" class="menu-item pitch-deck-link" style="color: var(--accent-color); font-weight: 600; margin-bottom: 0.5rem; display: block;">Taran Tactical →</a>
+                        <a href="https://braveartists.com/" target="_blank" class="menu-item pitch-deck-link" style="color: #8bb6d6; font-weight: 600; display: block;">BAM →</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background-image: url('images/opportunity-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1>Hollywood Tactical</h1>
+            <p class="subtitle">AN ACTION PACKED SHOOTING EXPERIENCE</p>
+            <div class="hero-description">
+                <p>Level Up Live x Taran Tactical Innovations</p>
+            </div>
+        </div>
+        <a href="#concept" class="scroll-down-arrow" aria-label="Scroll down">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 16L20 26L30 16" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <section id="concept" class="section">
+            <div class="container">
+                <h2 class="visually-hidden">Concept</h2>
+                
+                <div class="concept-hero-text">
+                    <div class="concept-headline">
+                        <span>SHOOT & TRAIN.<br>PLAY & COMPETE.<br>EAT & DRINK.</span>
+                    </div>
+                    <div class="concept-description">
+                        <em>We have transformed target shooting into an entirely new form of sports entertainment using proprietary and patented gaming technology. We deliver a dynamic, immersive, authentic, and safe action shooting experience that everyone can enjoy. Our players stand, run, and live in the game, bringing target shooting to life as never before.</em>
+                    </div>
+                </div>
+
+                <div class="concept-zones" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem;">
+                    <div class="zones-content">
+                        <div class="zone-item" style="margin-bottom: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                            <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem;">Immersion Zone</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Experience cutting-edge VR and AR tactical training with realistic scenarios, adaptive challenges, and next-gen technology.</p>
+                        </div>
+
+                        <div class="zone-item" style="margin-bottom: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                            <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem;">Action Zone</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Step into state-of-the-art tactical shooting with advanced simulation and professional-grade equipment paired with cutting-edge gaming technology.</p>
+                        </div>
+
+                        <div class="zone-item" style="margin-bottom: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                            <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem;">Food and Beverage</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Enjoy a variety of food and beverage options in a modern, comfortable setting—perfect for relaxing between sessions.</p>
+                        </div>
+
+                        <div class="zone-item" style="padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                            <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem;">Retail</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Shop the latest tactical gear, apparel, and exclusive merchandise in our on-site retail store paired with premium brands and equipment.</p>
+                        </div>
+                    </div>
+
+                    <div class="zones-images" style="display: flex; flex-direction: column; gap: 3rem;">
+                        <div class="zone-image-item" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+                            <img src="images/immersion-zone.jpg" alt="Immersion Zone" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="zone-image-item" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+                            <img src="images/action-zone.jpg" alt="Action Zone" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="zone-image-item" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+                            <img src="images/food-beverage.jpg" alt="Food and Beverage" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="zone-image-item" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+                            <img src="images/retail.jpg" alt="Retail" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="digital-taran" class="section" style="background-image: url('images/tactical-bg.png'); background-size: cover; background-position: center; position: relative; overflow: hidden;">
+            <div class="digital-bg-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 20, 40, 0.8);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="digital-content" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: center; min-height: 60vh;">
+                    <div class="digital-title" style="color: #fff;">
+                        <h2 style="font-size: 4.5rem; font-weight: 700; color: #00d4ff; margin-bottom: 1rem; text-shadow: 0 0 30px rgba(0, 212, 255, 0.5); line-height: 1.1;">DIGITAL TARAN</h2>
+                        <h3 style="font-size: 2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0; line-height: 1.2;">and other characters</h3>
+                    </div>
+                    
+                    <div class="digital-descriptions" style="color: #fff;">
+                        <div class="digital-features" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="background: rgba(0, 212, 255, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #00d4ff;">
+                                <div style="color: #fff; font-weight: 600; font-size: 1.1rem; line-height: 1.4;">Powered by AI and Extended Reality technologies</div>
+                            </div>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                                <div style="color: #fff; font-weight: 600; font-size: 1.1rem; line-height: 1.4;">Train and compete in-game with Taran and licensed Hollywood characters</div>
+                            </div>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                                <div style="color: #fff; font-weight: 600; font-size: 1.1rem; line-height: 1.4;">"Train Like Hollywood" brings competition shooting to the masses</div>
+                            </div>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                                <div style="color: #fff; font-weight: 600; font-size: 1.1rem; line-height: 1.4;">AI Shadows allow people to shoot against any character they want</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="the-draw" class="section" style="background-image: url('images/concept-hero.png'); background-size: cover; background-position: center; position: relative;">
+            <div class="draw-bg-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="color: #fff; text-align: center; margin-bottom: 3rem;">THE DRAW</h2>
+                <div class="draw-content" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="draw-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                        <div class="draw-text">
+                            <div class="draw-points">
+                                <p style="color: #fff; font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">Enable fans to <strong>actually do</strong> what their Hollywood heroes do on the big screen - and on Youtube - in a highly immersive, authentic and <strong>safe</strong> way using the highest quality Airsoft firearms.</p>
+                                
+                                <p style="color: #fff; font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">Bring target shooting to life as never before in a pulse-raising environment that is best shared with friends, family and coworkers.</p>
+                                
+                                <p style="color: #fff; font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem;">Give TTI fans an actual place where they can see, do, and buy all things TTI.</p>
+                            </div>
+                        </div>
+                        <div class="draw-video">
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/M8omrhUbhLE?start=278" 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                                    allowfullscreen
+                                    title="YouTube video player"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="opportunity" class="section opportunity-section">
+            <div class="opportunity-bg-overlay"></div>
+            <div class="container">
+                <h2 class="opportunity-title">THE OPPORTUNITY</h2>
+                <div class="opportunity-stats">
+                    <div class="opportunity-stat">
+                        <div class="stat-value">$20B+</div>
+                        <div class="stat-label">Global Experiential Entertainment<br>Industry</div>
+                    </div>
+                    <div class="opportunity-divider"></div>
+                    <div class="opportunity-stat" style="transform: scale(1.2);">
+                        <div class="stat-value" style="color: var(--accent-color); font-size: 4.5rem;">$87B</div>
+                        <div class="stat-label">Box Office Revenue of the Top<br>100 Action Movies</div>
+                    </div>
+                    <div class="opportunity-divider"></div>
+                    <div class="opportunity-stat">
+                        <div class="stat-value">49m</div>
+                        <div class="stat-label">Annual visitors to Hollywood each<br>year</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="founders" class="section">
+            <div class="founders-bg-overlay"></div>
+            <div class="container">
+                <h2>PROVEN LEADERSHIP</h2>
+                <div class="credibility-stats" style="text-align: center; margin-bottom: 3rem;">
+                    <div style="font-size: 1.3rem; color: var(--accent-color); margin-bottom: 1rem;">Hollywood Elite • Military Personnel • Industry Veterans</div>
+                </div>
+                <div class="founders-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: start;">
+                    <div class="founder-card" style="text-align: center;">
+                        <div class="founder-photo">
+                            <img src="images/taran-butler.jpg" alt="Taran Butler">
+                        </div>
+                        <h3>Taran Butler</h3>
+                        <p class="founder-title">World Champion Shooter</p>
+                        <p>Trains Hollywood's elite and military personnel</p>
+                    </div>
+                    <div class="founder-card" style="text-align: center;">
+                        <div class="founder-photo">
+                            <img src="images/thomas-chiarella.jpeg" alt="Thomas Chiarella">
+                        </div>
+                        <h3>Thomas Chiarella</h3>
+                        <p class="founder-title">Entertainment Entrepreneur</p>
+                        <p>Pioneering immersive tactical entertainment</p>
+                    </div>
+                    <div class="founder-card" style="text-align: center;">
+                        <div class="founder-photo">
+                            <img src="images/Eric-Kind.jpg" alt="Eric Kind">
+                        </div>
+                        <h3>Eric Kind</h3>
+                        <p class="founder-title">Talent Management</p>
+                        <p>Strategic partnerships & talent management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnerships" class="section">
+            <div class="container">
+                <h2>STRATEGIC PARTNERSHIPS</h2>
+                
+                <div class="partnership-brands" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; margin: 4rem 0; max-width: 1200px; margin: 4rem auto;">
+                    <div class="brand-partnership" style="text-align: left;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div class="partner-logo tti-logo" style="width: 120px; height: 120px; border: 3px solid var(--accent-color); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; background: rgba(0, 0, 0, 0.8); padding: 0.5rem; overflow: hidden;">
+                                <img src="images/taran.png" alt="Taran Tactical Innovations Logo" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="color: #fff; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Taran Tactical Innovations</div>
+                        </div>
+                        <ul style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.6; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Industry-leading firearm training expertise
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Airsoft firearms for use at the Zones
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Airsoft firearms and complete line of TTI merch for the Retail Experience
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Branded gear & accessories
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Trusted brand in shooting sports
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="brand-partnership" style="text-align: left;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 120px; height: 120px; border: 3px solid #00d4ff; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; background: rgba(0, 0, 0, 0.3); padding: 1rem;">
+                                <img src="images/LUL-Logo.png" alt="Level Up Live Logo" style="max-width: 80px; max-height: 80px; object-fit: contain;">
+                            </div>
+                            <div style="color: #fff; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Level Up Live</div>
+                        </div>
+                        <ul style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.6; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: #00d4ff;">•</span>
+                                Proprietary & patented tech & software including AI
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: #00d4ff;">•</span>
+                                Ever expanding catalog drills, games & simulations
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: #00d4ff;">•</span>
+                                Gamified training modules
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: #00d4ff;">•</span>
+                                Smart range accessories
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: #00d4ff;">•</span>
+                                Established XR gaming brand
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="brand-partnership" style="text-align: left;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div class="partner-logo bam-logo" style="width: 120px; height: 120px; border: 3px solid var(--accent-color); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; background: rgba(0, 0, 0, 0.3); padding: 1rem;">
+                                <img src="images/bam.png" alt="BAM Logo" style="max-width: 80px; max-height: 80px; object-fit: contain;">
+                            </div>
+                            <div style="color: #fff; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Eric Kind / BAE</div>
+                        </div>
+                        <ul style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.6; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Deal maker with TTI, LUL and Hollywood partners
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Investor outreach & fundraising
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Studio licensing deals
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Talent licensing & events
+                            </li>
+                            <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-color);">•</span>
+                                Promotion
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <div style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Combined Reach & Expertise</div>
+                    <div style="color: rgba(255, 255, 255, 0.8);">Bringing together tactical innovation, gaming technology, and entertainment industry connections</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="financials" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 1rem;">THE PROJECTED FINANCIALS</h2>
+                <div style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.1rem;">FOR A VENUE IN THE LOS ANGELES / HOLLYWOOD AREA</div>
+                
+                <div class="financial-metrics" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 4rem 0; max-width: 1200px; margin: 4rem auto; background: rgba(0, 0, 0, 0.4); border-radius: 10px; overflow: hidden;">
+                    <div class="metric-item" style="text-align: center; padding: 2rem 1rem; border-right: 2px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">$21.1m</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">TOP-LINE REVENUE</div>
+                    </div>
+                    
+                    <div class="metric-item" style="text-align: center; padding: 2rem 1rem; border-right: 2px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">$16.0m</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">GROSS PROFIT</div>
+                    </div>
+                    
+                    <div class="metric-item" style="text-align: center; padding: 2rem 1rem; border-right: 2px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">$6.4m</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">NET PROFIT</div>
+                    </div>
+                    
+                    <div class="metric-item" style="text-align: center; padding: 2rem 1rem; border-right: 2px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">~260k</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">TOTAL VISITORS</div>
+                    </div>
+                    
+                    <div class="metric-item" style="text-align: center; padding: 2rem 1rem;">
+                        <div style="font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">~$80</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; line-height: 1.3;">SPEND PER GUEST<br><span style="font-size: 0.7rem;">(across entertainment,<br>retail and F&B)</span></div>
+                    </div>
+                </div>
+                
+                <div class="revenue-breakdown" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0;">
+                    <div class="revenue-category" style="background: linear-gradient(135deg, rgba(230, 57, 70, 0.2), rgba(230, 57, 70, 0.4)); border: 1px solid rgba(230, 57, 70, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                        <div style="color: #fff; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">SHOOTING SPORTS ENTERTAINMENT</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 1rem;">$8.1 Million</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.4;">Walk-ins, reservations, VIP memberships, leagues, training, and more.</div>
+                    </div>
+                    
+                    <div class="revenue-category" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.3)); border: 1px solid rgba(0, 212, 255, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                        <div style="color: #fff; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">FOOD & BEVERAGE</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #00d4ff; margin-bottom: 1rem;">$10.1 Million</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.4;">Food, beverage, corporate events, social events, VIP club.</div>
+                    </div>
+                    
+                    <div class="revenue-category" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15)); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                        <div style="color: #fff; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">RETAIL</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">$2.7 Million</div>
+                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.4;">TTI Airsoft guns, accessories, merch. The Range merch. Partner products.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="airsoft-advantages" class="section" style="background-image: url('images/armory.jpg'); background-size: cover; background-position: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">AIRSOFT DELIVERS BUSINESS ADVANTAGES</h2>
+                
+                <div class="advantages-container" style="max-width: 900px; margin: 0 auto; background: rgba(0, 0, 0, 0.3); border: 2px solid rgba(230, 57, 70, 0.4); border-radius: 20px; padding: 3rem;">
+                    <div class="advantage-item" style="margin-bottom: 2.5rem; text-align: center;">
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6;">
+                            Airsoft is <strong style="color: #fff;">SAFE</strong>, which means minimal liabilities.
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item" style="margin-bottom: 2.5rem; text-align: center;">
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6;">
+                            Airsoft is <strong style="color: #fff;">REALISTIC</strong>, which gives customers a highly tactile, action-packed and visceral experience.
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item" style="margin-bottom: 2.5rem; text-align: center;">
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6;">
+                            Airsoft BBs are <strong style="color: #fff;">INEXPENSIVE</strong>, which gives customers tremendous value and gives our company incredibly gross margins.
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item" style="margin-bottom: 2.5rem; text-align: center;">
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6;">
+                            Airsoft is broadly <strong style="color: #fff;">LEGAL</strong>, which means we can expand to almost anywhere across the country and globally.
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item" style="text-align: center;">
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6;">
+                            Airsoft requires <strong style="color: #fff;">NO SPECIAL PERMITTING</strong>, as would any business that deals with actual firearms in any way.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="moment-is-now" class="section" style="background-image: url('images/la.jpg'); background-size: cover; background-position: center; position: relative; min-height: 80vh; display: flex; align-items: center;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6);"></div>
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
+                <h1 style="font-size: 4.5rem; font-weight: 300; color: #fff; margin-bottom: 3rem; line-height: 1.2;">The Moment is <strong style="font-weight: 700;">Now</strong>.</h1>
+                
+                <div class="moment-content" style="max-width: 800px; margin: 0 auto;">
+                    <div class="moment-points" style="margin-bottom: 4rem;">
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">AI & gamification fueling immersive experiences</p>
+                        
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">Hollywood and Hollywood-listers are popularizing action shooting and shooting sports</p>
+                        
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">Surging demand for real-world, high-adrenaline venues</p>
+                        
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">Gives TTI fans and followers a real location to shoot and buy all things TTI</p>
+                        
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">No luxury competitor in tactical entertainment</p>
+                        
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">The Hollywood Tactical Experience can easily be expanded to 20 locations in the US and internationally</p>
+                    </div>
+                    
+                    <div class="closing-statement" style="padding: 2rem; background: rgba(0, 0, 0, 0.3); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <p style="color: #fff; font-size: 1.4rem; font-weight: 300; line-height: 1.6; font-style: italic; margin-bottom: 2rem;">Together, let's bring the fun, competition and camaraderie of action shooting to everyone and create a global business that's valued in the billions.</p>
+                        
+                        <div style="text-align: center;">
+                            <a href="https://pitch.com/v/hollywood-tactical-experience-pitch-deck-jn5zv3" target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--accent-color), #cc3a4b); color: #fff; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);">
+                                View the Full Pitch Deck →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Level Up Live</h3>
+                    <p>info@leveluplive.com</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Level Up Live. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+    // Scroll to Top Function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Hamburger Menu Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Only close menu when clicking the external pitch deck link
+        menuItems.forEach(item => {
+            if (item.classList.contains('pitch-deck-link')) {
+                item.addEventListener('click', function() {
+                    hamburgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Slide-in animation for Concept section
+    const conceptText = document.querySelector('.concept-hero-text');
+    if (conceptText) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            conceptText.classList.add('slide-in');
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(conceptText);
+    }
+    </script>
+
+    <!-- Popup Modal -->
+    <div class="zone-popup" id="zonePopup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <div class="popup-media"></div>
+            <div class="popup-description"></div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('zonePopup');
+        const popupMedia = popup.querySelector('.popup-media');
+        const popupDescription = popup.querySelector('.popup-description');
+        const closePopup = popup.querySelector('.close-popup');
+
+        const zoneDetails = {
+            'immersion-zone': {
+                type: 'video',
+                src: 'images/immersion-zone.mp4',
+                description: 'Experience cutting-edge VR and AR tactical training in the Immersion Zone. Realistic scenarios, adaptive challenges, and next-gen technology.'
+            },
+            'action-zone': {
+                type: 'video',
+                src: 'images/action-zone.mp4',
+                description: 'Step into the Action Zone for state-of-the-art tactical shooting with advanced simulation and professional-grade equipment.'
+            },
+            'food-beverage': {
+                type: 'image',
+                src: 'images/food-beverage.jpg',
+                description: 'Enjoy a variety of food and beverage options in a modern, comfortable setting—perfect for relaxing between sessions.'
+            },
+            'retail': {
+                type: 'image',
+                src: 'images/retail.jpg',
+                description: 'Shop the latest tactical gear, apparel, and exclusive merchandise in our on-site retail store.'
+            }
+        };
+
+        document.querySelectorAll('.zone-item').forEach(row => {
+            row.addEventListener('click', function() {
+                const zone = this.getAttribute('data-zone');
+                const details = zoneDetails[zone];
+                if (!details) return;
+                popupMedia.innerHTML = '';
+                if (details.type === 'video') {
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.muted = true; // Start muted to allow autoplay
+                    video.style.cssText = 'max-width:100%;max-height:60vh;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.5);background:#000;display:block;';
+                    video.innerHTML = `<source src="${details.src}" type="video/mp4">Your browser does not support the video tag.`;
+                    
+                    // Add error handling
+                    video.onerror = function() {
+                        console.error('Video failed to load:', details.src);
+                        popupMedia.innerHTML = `<div style="padding:20px;color:#fff;text-align:center;">Video unavailable: ${details.src}</div>`;
+                    };
+                    
+                    popupMedia.appendChild(video);
+                } else if (details.type === 'image') {
+                    popupMedia.innerHTML = `<img src="${details.src}" alt="${zone}" style="max-width:100%;max-height:60vh;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.5);background:#000;">`;
+                }
+                popupDescription.textContent = details.description;
+                popup.classList.add('active');
+            });
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.classList.remove('active');
+            popupMedia.innerHTML = '';
+            popupDescription.textContent = '';
+        });
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                popupMedia.innerHTML = '';
+                popupDescription.textContent = '';
+            }
+        });
+    });
+    </script>
+</body>
+</html> 
